@@ -1,6 +1,7 @@
 // page.tsx
 import { auth } from '@clerk/nextjs/server';
-import FileUploadComponent from './components/file_upload'
+import FileUploadComponent from './components/file_upload';
+import ChatComponent from './components/chat'
 
 export default async function Home() {
   const { userId } = await auth();
@@ -48,10 +49,10 @@ export default async function Home() {
       {/* RIGHT SIDE - Chat */}
       <div className="w-1/2 flex flex-col justify-between p-6">
 
-        <div className="flex-1 overflow-y-auto">
+        {/* <div className="flex-1 overflow-y-auto">
           <h2 className="text-xl font-semibold mb-4">Chat with AI</h2>
 
-          {/* Chat messages */}
+          
           <div className="space-y-2">
             <p className="bg-gray-200 p-2 rounded w-fit">
               Hello! Upload a PDF to start chatting.
@@ -59,7 +60,7 @@ export default async function Home() {
           </div>
         </div>
 
-        {/* Chat input */}
+    
         <div className="flex gap-2 mt-4">
           <input
             type="text"
@@ -70,7 +71,9 @@ export default async function Home() {
           <button className="bg-purple-600 text-white px-4 py-2 rounded">
             Send
           </button>
-        </div>
+        </div> */}
+
+        <ChatComponent/>
 
       </div>
 
